@@ -1,6 +1,6 @@
 ### This function captures the user's name
 
-def main(to):
+def main():
     name = input("What's your name? ")
     hello(name)
 
