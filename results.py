@@ -1,0 +1,16 @@
+results = ["Mario", "Luigi"]
+
+results.append("Princess")
+results.append("Yoshi")
+results.append("Koopa Troopa")
+results.append("Toad")
+
+results.append(["Bowser", "Donkey King Jr."])
+results.remove(["Bowser", "Donkey King Jr."])
+results.extend(["Bowser", "Donkey King Jr."])
+
+results.remove("Bowser")
+results.insert(0, "Bowser")
+results.reverse()
+
+print(results)
