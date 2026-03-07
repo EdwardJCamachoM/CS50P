@@ -13,21 +13,25 @@ months = {
     "December": 12
 }
 
-while True:
-    try:
-        user_input = input("Enter a date: ")
-        if "/" in user_input:
-            dates = user_input.split("/")
-            month = int(dates[0])
-            days = int(dates[1])
-            year = int(dates[2])
-        else:
-            dates = user_input.replace(",", "").split(" ")
-            month = int(months.get(dates[0]))
-            days = int(dates[1])
-            year = int(dates[2])
-        if month > 12 or days > 31:
-            raise ValueError
-        print(f"{year}-{month:02d}-{days:02d}")
-    except ValueError:
-        pass
+def main():
+    while True:
+        try:
+            user_input = input("Enter a date: ")
+            user_input = user_input.title()
+            if "/" in user_input:
+                dates = user_input.split("/")
+                month = int(dates[0])
+                days = int(dates[1])
+                year = int(dates[2])
+            else:
+                dates = user_input.replace(",", "").split(" ")
+                month = int(months.get(dates[0]))
+                days = int(dates[1])
+                year = int(dates[2])
+            if month > 12 or days > 31:
+                raise ValueError
+            print(f"{year}-{month:02d}-{days:02d}")
+        except ValueError:
+            pass
+
+if __name__ == "__main__": main()
