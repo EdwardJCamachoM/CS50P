@@ -11,6 +11,6 @@ def main():
             bitcoin = float(user_input) * price
         except ValueError:
             sys.exit()
-        print(f"${bitcoin:,.4f}")
+        print(f"${bitcoin:,.2f}")
 
 if __name__ == "__main__": main()
