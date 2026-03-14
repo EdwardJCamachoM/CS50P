@@ -6,14 +6,18 @@ def get_fraction():
             try:
                 tank_fraction = input("Enter the fraction of fuel your tank has: ")
                 x, y = tank_fraction.split("/")
-                tank_percentage = round((int(x)/int(y)) * 100)
-                if int(x) > int(y):
-                    raise ValueError
-                return tank_percentage
+                return convert(int(x), int(y))
             except ValueError:
                 pass
             except ZeroDivisionError:
                 pass
+
+def convert(x, y):
+    if y == 0:
+        raise ZeroDivisionError
+    if x > y:
+        raise ValueError
+    return round((x / y) * 100)
 
 def gauge(percentage):
     if percentage <= 1:
